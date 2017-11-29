@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="UI2_equantion:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/UI2_equantion_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="UI2_equantion/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="UI2_equantion" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
