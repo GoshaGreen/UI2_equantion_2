@@ -24,7 +24,7 @@
     </fieldset>
   </form>
 
-  <form action="Solver", method="Post">
+  <form action="Solver" method="Post">
     <fieldset>
       <legend>Solver</legend>
       <p>Enter coefficients:</p>
@@ -37,6 +37,7 @@
       <fieldset>
           <legend>Result Table</legend>
           <div id="textfield">Debug</div>
+          <div class="myTablePlace"></div>
           <table id="tablee">
               <tbody id="table">
               <tr id="tradel">

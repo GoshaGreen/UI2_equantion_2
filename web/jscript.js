@@ -2,10 +2,10 @@
  * Created by Gosha on 28.11.2017.
  */
 
-function trdel(){
-    var textf = document.getElementById("textfield");
-    textf.innerHTML = "Debug: Delite";
-}
+var TableTitle = ["Equantion", "First root","Second root"];
+var TableValue = [ ];
+
+
 
 function solve() {
     var coefA = document.getElementsByName("A")[0].value.toString();
@@ -31,22 +31,62 @@ function solve() {
 
         xhr.onreadystatechange = function() {
             if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                TableValue.push([""+coefA+" x<sup>2</sup> + "+coefB+" x + "+coefC+" = 0",1,2])
+                rePrintTable();
                 table.innerHTML =  table.innerHTML + "<tr><td>"+coefA+" x<sup>2</sup> + "+coefB+" x + "+coefC+" = 0</td>"+xhr.responseText+"</tr>";
             }
         }
     }
 }
 
-function dell() {
-    $("#tablee").onfocus(function(){
-        $("#textfield").innerHTML = "Debug: Delite1";
-        }
-    );
-}
 
-function dell2() {
-    $("#tradel").click(function(){
-        $("#textfield").innerHTML = "Debug: Delite2";
-        }
+function rePrintTable(){
+    $(".mytable").remove();
+    //Данные
+
+//Создадим структуру
+    var mytable = $('<table/>',{
+        class:'mytable'
+    }).append(
+        $('<thead/>'),
+        $('<tfoot/>'),
+        $('<tbody/>')
     );
+//Наполняем табличку
+//Заголовок
+    var TitleCell = $('<tr/>');
+    $.each(TableTitle,function( myIndex, myData ) {
+        TitleCell.append(
+            $('<th/>',{
+                text:myData
+            })
+        );
+    });
+    $("thead",mytable).append(TitleCell);
+//Данные
+    $.each(TableValue,function() {
+        //Переопределяем строку
+        var DataCell = $('<tr/>');
+        //Пробегаемся по ячейкам
+        $.each(this,function() {
+            DataCell.append(
+                $('<td/>',{
+                    html:this
+                })
+            );
+        });
+        $("tbody",mytable).append(DataCell);
+    });
+//Без цикла (не обязательно)
+  /*  $.each(TableValue,function( i, myData ) {
+        $("tbody",mytable).append(
+            $('<tr/>').append(
+                $('<td/>',{text:myData[0]}),
+                $('<td/>',{text:myData[1]}),
+                $('<td/>',{text:myData[2]}) //Или так
+            )
+        );
+    });*/
+
+    $(".myTablePlace").append(mytable);
 }
