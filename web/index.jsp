@@ -1,4 +1,6 @@
 <%--
+вопросы к борису:
+как определить место вставки таблицы. я определил дивом, норм ли?
   Created by IntelliJ IDEA.
   User: Gosha
   Date: 28.11.2017
@@ -19,12 +21,12 @@
     <fieldset>
         <legend>Instruction</legend>
         <div>
-            <p>Instruction text</p>
+            <p>Instruction text a lot of words how to use this sheet dont want to type em</p>
         </div>
     </fieldset>
   </form>
 
-  <form action="Solver" method="Post">
+  <form>
     <fieldset>
       <legend>Solver</legend>
       <p>Enter coefficients:</p>
@@ -36,21 +38,33 @@
   <form>
       <fieldset>
           <legend>Result Table</legend>
-          <div id="textfield">Debug</div>
           <div class="myTablePlace"></div>
-          <table id="tablee">
-              <tbody id="table">
-              <tr id="tradel">
-                  <th>Equantion</th>
-                  <th>First root</th>
-                  <th>Second root</th>
-              </tr>
-              </tbody>
-          </table>
       </fieldset>
   </form>
-
-
-
+  <div id="textfield">Debug</div>
+  <table>
+      <tr>
+          <th>тестовая</th>
+          <th>таблица</th>
+          <th>чтобы</th>
+      </tr>
+      <tbody>
+      <tr>
+          <td>показать</td>
+          <td>что</td>
+          <td>две</td>
+      </tr>
+      <tr>
+          <td>таблицы</td>
+          <td>имеют</td>
+          <td>различный</td>
+      </tr>
+      <tr>
+          <td>стиль</td>
+          <td>оформления</td>
+          <td>css</td>
+      </tr>
+      </tbody>
+  </table>
   </body>
 </html>

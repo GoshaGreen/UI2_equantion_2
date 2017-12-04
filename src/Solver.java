@@ -42,7 +42,21 @@ public class Solver extends HttpServlet{
         System.out.println(answer[0]+" "+answer[1]);
 
         StringBuilder builder = new StringBuilder();
+
         PrintWriter pw = resp.getWriter();
-        pw.write("<td>"+answer[0]+"</td><td>"+answer[1]+"</td>");
+        resp.setContentType("text/xml");
+        pw.print("\n<root>");
+        pw.print("\n   <FirstRoot>" + answer[0] + "</FirstRoot>");
+        pw.print("\n   <SecondRoot>" + answer[1] + "</SecondRoot>");
+        pw.print("\n</root>");
+
+
+        /*PrintWriter pw = resp.getWriter();
+        //pw.write("<td>"+answer[0]+"</td><td>"+answer[1]+"</td>");
+        pw.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE roles SYSTEM \"roles.dtd\">\n<FirstRoot>\n"+answer[0]+"\n</FirstRoot\n<SecondRoot>\n"+answer[1]+"\n</SecondRoot>\n");
+*/
+
+
+
     }
 }

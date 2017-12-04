@@ -3,7 +3,7 @@ table.mytable {
     width: 100%;
 }
 
-th {
+table.mytable th {
     background-color: #4CAF50;
     color: white;
     border: 1px solid black;
@@ -11,17 +11,17 @@ th {
     padding: 8px;
 }
 
-td, th {
+table.mytable td, table.mytable th {
     border: 1px solid black;
     text-align: left;
     padding: 8px;
 }
 
-tr:nth-child(even) {
+table.mytable tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-tr:hover {
+table.mytable tr:hover {
     background-color: #ccffcc;
 }
 
